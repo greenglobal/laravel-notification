@@ -1,0 +1,45 @@
+{
+    "name": "greenglobal/laravel-notification",
+    "description": "A Package for management notification with jsonapi specification",
+    "keywords": [
+        "greenglobal",
+        "notification",
+        "laravel notification",
+        "onesignal notification"
+    ],
+    "homepage": "https://github.com/greenglobal/laravel-notification",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "GiangNT",
+            "email": "nguyentrigiang1991@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "berkayk/onesignal-laravel": "^1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "GGPHP\\LaravelNotification\\": "src/"
+      }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GGPHP\\LaravelNotification\\": "src/",
+            "GGPHP\\LaravelNotification\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+      "laravel": {
+          "providers": [
+              "GGPHP\\LaravelNotification\\NotificationServiceProvider"
+          ]
+      }
+    }
+}
