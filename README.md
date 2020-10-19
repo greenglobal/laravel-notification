@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/nguyentrigiang/laravel-notification.svg?branch=master)](https://travis-ci.org/nguyentrigiang/laravel-notification)
-[![License](https://img.shields.io/github/license/nguyentrigiang/laravel-notification.svg)](https://github.com/nguyentrigiang/laravel-notification/blob/master/LICENSE)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 
 # Introduction
@@ -13,7 +12,7 @@ or you can notify a single user, manage notifications, devices ID, and configure
 First, you'll need to require the package with Composer:
 
 ```sh
-composer require nguyentrigiang/laravel-notification
+composer require greenglobal/laravel-notification
 ```
 The package will automatically register a service provider.
 
