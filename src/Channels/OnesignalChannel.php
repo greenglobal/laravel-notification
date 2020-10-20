@@ -18,26 +18,26 @@ class OnesignalChannel
     {
         $data = $notification->toOnesignal($notifiable);
 
-        $players = $notifiable->players;
+        $devices = $notifiable->devices;
         $configuration = $notifiable->configuration;
         $isSend = empty($configuration) ? true : $configuration->isSend(date('Y-m-d H:i'));
 
-        if ($isSend && !empty($players)) {
-            foreach ($players as $player) {
-                $params = $this->prepareParams($data, $player->player_id);
+        if ($isSend && !empty($devices)) {
+            foreach ($devices as $device) {
+                $params = $this->prepareParams($data, $device->device_id);
                 OneSignal::sendNotificationCustom($params);
             }
         }
     }
 
-    public function prepareParams($data, $playerId) {
+    public function prepareParams($data, $deviceId) {
         $contents = [
             "en" => $data['message'] ?? ''
         ];
 
         $params = [
             'contents' => $contents,
-            'include_player_ids' => [$playerId],
+            'include_device_ids' => [$deviceId],
             'data' => $data,
         ];
 
