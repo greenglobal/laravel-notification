@@ -1,4 +1,5 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Actions Status](https://github.com/greenglobal/laravel-notification/workflows/Build/badge.svg)](https://github.com/greenglobal/laravel-notification/actions)
 
 
 # Introduction
@@ -6,6 +7,20 @@
 This is a simple Notification wrapper library for Laravel. It simplifies the basic
 notification flow with the defined methods. You can send a message to all users
 or you can notify a single user, manage notifications, devices ID, and configure time to receive notifications.
+
+
+# System requirements
+
+1. PHP >=7.3
+2. cz-cli - Support convention of message when commit to repo. Install following the [guide](https://github.com/commitizen/cz-cli)
+
+
+# Feature
+- Supports channels Database and Onesignal
+- Notifications Manager
+- Notifications Configuration
+- Devices Manager
+
 
 # Installation
 
@@ -93,7 +108,6 @@ foreach ($user->notifications as $notification) {
 }
 ```
 
-
 ## Interacts with Player
 ```php
 $user->addPlayer('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
@@ -101,7 +115,6 @@ $players = $user->players;
 $user->deletePlayer('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
 $user->clearPlayer();
 ```
-
 
 ## Interacts with Configuration
 ```php

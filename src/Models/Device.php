@@ -4,13 +4,13 @@ namespace GGPHP\LaravelNotification\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Player extends Model
+class Device extends Model
 {
 
     /**
      * Declare the table name
      */
-    protected $table = 'notifications_players';
+    protected $table = 'notifications_devices';
 
     /**
      * The attributes that are mass assignable.
@@ -18,11 +18,11 @@ class Player extends Model
      * @var array
      */
     protected $fillable = [
-        'player_id'
+        'device_id'
     ];
 
     /**
-     * Get a player ownership model.
+     * Get a device ownership model.
      */
     public function owner()
     {

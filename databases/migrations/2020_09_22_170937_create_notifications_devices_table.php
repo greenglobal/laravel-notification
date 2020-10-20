@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNotificationsPlayersTable extends Migration
+class CreateNotificationsDevicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateNotificationsPlayersTable extends Migration
      */
     public function up()
     {
-        Schema::create('notifications_players', function (Blueprint $table) {
+        Schema::create('notifications_devices', function (Blueprint $table) {
             $table->id();
-            $table->uuid('player_id');
+            $table->uuid('device_id');
             $table->morphs('owner');
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreateNotificationsPlayersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notifications_players');
+        Schema::dropIfExists('notifications_devices');
     }
 }
