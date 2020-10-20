@@ -9,10 +9,10 @@ use GGPHP\LaravelNotification\Tests\Models\User;
  *
  * @package Tests
  */
-class PlayerTest extends TestCase
+class DeviceTest extends TestCase
 {
     /**
-     * Test player creation function.
+     * Test device creation function.
      */
     public function testCreateFunction()
     {
@@ -21,12 +21,12 @@ class PlayerTest extends TestCase
             'email' => 'nguyentrigiang1991@gmail.com',
             'password' => '123456'
         ]);
-        $user->addPlayer('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
-        $this->assertEquals(1, $user->players->count());
+        $user->addDevice('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
+        $this->assertEquals(1, $user->devices->count());
     }
 
     /**
-     * Test player deletion function.
+     * Test device deletion function.
      */
     public function testDeleteFunction()
     {
@@ -35,15 +35,15 @@ class PlayerTest extends TestCase
             'email' => 'nguyentrigiang1991@gmail.com',
             'password' => '123456'
         ]);
-        $user->addPlayer('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
-        $this->assertEquals(1, $user->players->count());
-        $user->deletePlayer('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
+        $user->addDevice('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
+        $this->assertEquals(1, $user->devices->count());
+        $user->deleteDevice('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
         $user->refresh();
-        $this->assertEquals(0, $user->players->count());
+        $this->assertEquals(0, $user->devices->count());
     }
 
     /**
-     * Test player clearing function.
+     * Test device clearing function.
      */
     public function testClearFunction()
     {
@@ -52,16 +52,16 @@ class PlayerTest extends TestCase
             'email' => 'nguyentrigiang1991@gmail.com',
             'password' => '123456'
         ]);
-        $user->addPlayer('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
-        $user->addPlayer('b4de36c7-e81d-4690-a15e-c15864b9e2c2');
-        $this->assertEquals(2, $user->players->count());
-        $user->clearPlayer();
+        $user->addDevice('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
+        $user->addDevice('b4de36c7-e81d-4690-a15e-c15864b9e2c2');
+        $this->assertEquals(2, $user->devices->count());
+        $user->clearDevice();
         $user->refresh();
-        $this->assertEquals(0, $user->players->count());
+        $this->assertEquals(0, $user->devices->count());
     }
 
     /**
-     * Test player listing function.
+     * Test device listing function.
      */
     public function testListFunction()
     {
@@ -75,10 +75,10 @@ class PlayerTest extends TestCase
             'email' => 'nguyentrigiang1991_2@gmail.com',
             'password' => '123456'
         ]);
-        $user->addPlayer('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
-        $user->addPlayer('b4de36c7-e81d-4690-a15e-c15864b9e2c2');
-        $user2->addPlayer('15380637-09da-4755-95e2-d53613548716');
-        $this->assertEquals(2, $user->players->count());
-        $this->assertEquals(1, $user2->players->count());
+        $user->addDevice('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
+        $user->addDevice('b4de36c7-e81d-4690-a15e-c15864b9e2c2');
+        $user2->addDevice('15380637-09da-4755-95e2-d53613548716');
+        $this->assertEquals(2, $user->devices->count());
+        $this->assertEquals(1, $user2->devices->count());
     }
 }

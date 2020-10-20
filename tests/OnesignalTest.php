@@ -25,7 +25,7 @@ class OnesignalTest extends TestCase
             'email' => 'nguyentrigiang1991@gmail.com',
             'password' => '123456'
         ]);
-        $user->addPlayer('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
+        $user->addDevice('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
 
         $data = [
             'start_time' => '5:00',
@@ -49,7 +49,7 @@ class OnesignalTest extends TestCase
             'email' => 'nguyentrigiang1991@gmail.com',
             'password' => '123456'
         ]);
-        $user->addPlayer('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
+        $user->addDevice('5ea79c81-327f-4d8b-98b1-58dbd22a277b');
 
         $user->notify(new UserRegisted);
     }
