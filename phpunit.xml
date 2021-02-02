@@ -10,5 +10,6 @@
     </testsuites>
     <php>
         <server name="APP_ENV" value="testing"/>
+        <server name="FIREBASE_CREDENTIALS" value="/var/www/app/firebase-adminsdk.json"/> 
     </php>
 </phpunit>
