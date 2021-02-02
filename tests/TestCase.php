@@ -5,6 +5,7 @@ namespace GGPHP\LaravelNotification\Tests;
 use Orchestra\Testbench\TestCase as Orchestra;
 use GGPHP\LaravelNotification\NotificationServiceProvider;
 use Berkayk\OneSignal\OneSignalServiceProvider;
+use Kreait\Laravel\Firebase\ServiceProvider as FirebaseServiceProvider;
 
 /**
  * Class BaseTests
@@ -60,6 +61,7 @@ class TestCase extends Orchestra
         return [
             NotificationServiceProvider::class,
             OneSignalServiceProvider::class,
+            FirebaseServiceProvider::class,
         ];
     }
 }
