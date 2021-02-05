@@ -16,7 +16,7 @@ or you can notify a single user, manage notifications, devices ID, and configure
 
 
 # Feature
-- Supports channels Database and Onesignal
+- Supports channels Database, Onesignal and Firebase
 - Notifications Manager
 - Notifications Configuration
 - Devices Manager
@@ -43,6 +43,7 @@ php artisan migrate
 
 
 # Configuration
+
 After publishing Notification's assets, its primary configuration file will be located at config/notification.php. This configuration file allows you to configure type of ID used for the notification.
 > **Note:** Please make sure you change the type of the ID column in the notifications table according to the type of ID configured.
 
@@ -56,6 +57,18 @@ to publish the default configuration file. This will publish a configuration fil
 
 You need to fill in onesignal.php file that is found in your applications config directory. app_id is your OneSignal App ID and rest_api_key is your REST API Key.
 
+If you use Firebase,
+
+Once you have downloaded the Service Account JSON file, you can configure the package by specifying environment variables starting with FIREBASE_ in your .env file. Usually, the following are required for the package to work:
+```sh
+# relative or full path to the Service Account JSON file
+FIREBASE_CREDENTIALS=
+```
+For further configuration, please see config/firebase.php. You can modify the configuration by copying it to your local config directory or by defining the environment variables used in the config file:
+```sh
+# Laravel
+php artisan vendor:publish --provider="Kreait\Laravel\Firebase\ServiceProvider" --tag=config
+```
 
 # USAGE
 
@@ -90,6 +103,7 @@ class UserRegisted extends BaseNotification
 {
 }
 ```
+You can find examples [here](https://github.com/greenglobal/laravel-notification/tree/master/tests/Notification)
 
 ## Sending Notifications:
 
